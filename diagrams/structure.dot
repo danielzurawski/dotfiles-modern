@@ -1,0 +1,81 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    
+    dotfiles [label="dotfiles-modern\nMinimal Modern Development Environment", fillcolor=lightgreen];
+    
+    subgraph cluster_0 {
+        label="Core Configurations";
+        git [label="git/\nVersion control config"];
+        zsh [label="zsh/\nShell configuration"];
+        tmux [label="tmux/\nTerminal multiplexer"];
+        wezterm [label="wezterm/\nModern terminal"];
+    }
+    
+    subgraph cluster_1 {
+        label="Development Tools";
+        
+        subgraph cluster_version {
+            label="Version Management";
+            style=filled;
+            color=lightgrey;
+            
+            pyenv [label="pyenv\nPython versions"];
+            fnm [label="fnm\nNode.js versions"];
+            sdkman [label="SDKMAN\nJava versions"];
+        }
+        
+        subgraph cluster_package {
+            label="Package Management";
+            style=filled;
+            color=lightgrey;
+            
+            poetry [label="poetry\nPython deps"];
+            pnpm [label="pnpm\nNode.js deps"];
+        }
+    }
+    
+    subgraph cluster_2 {
+        label="Developer Experience";
+        vscode [label="VSCode\nEditor config"];
+        dbeaver [label="DBeaver\nDatabase management"];
+        powerlevel10k [label="Powerlevel10k\nModern prompt"];
+    }
+    
+    subgraph cluster_3 {
+        label="Shell Utilities";
+        modern_tools [label="Modern CLI Tools\nripgrep, fd, bat, eza"];
+        shell_enhance [label="Shell Enhancements\nzoxide, fzf"];
+    }
+    
+    # Core connections
+    dotfiles -> git;
+    dotfiles -> zsh;
+    dotfiles -> tmux;
+    dotfiles -> wezterm;
+    
+    # Development tool connections
+    dotfiles -> pyenv;
+    dotfiles -> fnm;
+    dotfiles -> sdkman;
+    dotfiles -> poetry;
+    dotfiles -> pnpm;
+    
+    # Developer experience connections
+    dotfiles -> vscode;
+    dotfiles -> dbeaver;
+    dotfiles -> powerlevel10k;
+    
+    # Utility connections
+    dotfiles -> modern_tools;
+    dotfiles -> shell_enhance;
+    
+    # Configuration files
+    install [label="install.sh\nSetup script", fillcolor=lightgreen];
+    brewfile [label="Brewfile\nPackage manifest", fillcolor=lightgreen];
+    readme [label="README.md\nDocumentation", fillcolor=lightgreen];
+    
+    dotfiles -> install;
+    dotfiles -> brewfile;
+    dotfiles -> readme;
+}

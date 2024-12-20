@@ -1,0 +1,60 @@
+# System utilities
+brew "git"
+brew "git-extras"
+brew "jq"
+brew "tmux"
+brew "neovim"        # Modern vim replacement
+brew "zsh"
+brew "nushell"       # Modern shell alternative
+
+# Development tools
+brew "pyenv"          # Python version management
+brew "poetry"         # Python dependency management
+brew "fnm"            # Fast Node.js version manager
+brew "pnpm"          # Efficient Node.js package manager
+brew "docker"         # Containerization
+
+# Shell enhancements
+brew "romkatv/powerlevel10k/powerlevel10k"  # Modern prompt
+brew "zoxide"         # Smart directory navigation
+brew "zsh-syntax-highlighting"
+brew "fzf"           # Fuzzy finder
+
+# Search and process
+brew "ripgrep"        # Modern grep replacement
+brew "fd"            # Modern find replacement
+brew "bat"           # Modern cat replacement
+brew "eza"           # Modern ls replacement (maintained fork of exa)
+brew "exiftool"
+brew "ffmpeg"
+brew "imagemagick"
+
+# Cloud and container tools
+brew "kubectl"
+brew "kubernetes-helm"
+brew "kubectx"       # Kubernetes context switcher
+brew "k9s"           # Terminal UI for Kubernetes
+
+# Terminal and editor
+cask "wezterm"       # Modern terminal emulator
+cask "visual-studio-code"
+
+# Development utilities
+cask "postman"       # API testing
+cask "docker"        # Docker Desktop
+
+# Fonts
+tap "homebrew/cask-fonts"
+cask "font-meslo-lg-nerd-font"  # Recommended for Powerlevel10k
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-ubuntu-mono-nerd-font"
+
+# Communication and productivity
+cask "slack"
+cask "spotify"
+
+# Media tools
+cask "handbrake"
+cask "iina"
