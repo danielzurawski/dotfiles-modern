@@ -1,7 +1,7 @@
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
 
-# Set the Prezto modules to load (browse modules).
+# Set the Prezto modules to load.
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
@@ -9,39 +9,39 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'directory' \
-  'spectrum' \
   'utility' \
   'completion' \
-  'fasd' \
-  'prompt' \
   'git'
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
-# Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
+# Git status configuration
+# Disable submodule checking as Powerlevel10k handles this efficiently
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
-zstyle ':prezto:module:git:info:context:subcontext' format 'string'
 
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt'
+# Directory navigation
+zstyle ':prezto:module:utility:ls' color 'yes'
+zstyle ':prezto:module:utility:diff' color 'yes'
+zstyle ':prezto:module:utility:wdiff' color 'yes'
+zstyle ':prezto:module:utility:make' color 'yes'
 
-# Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
+# Ensure proper terminal type for WezTerm
+zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
-# Auto start a session when Zsh is launched in a SSH connection.
-# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+# History configuration
+zstyle ':prezto:module:history' histfile "${ZDOTDIR:-$HOME}/.zhistory"
+zstyle ':prezto:module:history' histsize 10000
+zstyle ':prezto:module:history' savehist 10000
 
-# Integrate with iTerm2.
-zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# Directory configuration
+zstyle ':prezto:module:directory' auto-cd 'yes'
+zstyle ':prezto:module:directory' auto-pushd 'yes'
+zstyle ':prezto:module:directory' pushd-ignore-dups 'yes'
 
-# Set the default session name:
-zstyle ':prezto:module:tmux:session' name 'dev'
+# Remove redundant modules and iTerm2 integration
+# Removed: 'spectrum', 'prompt', 'fasd', 'tmux:iterm'
+# Removed: duplicate module loads
+# Removed: tmux auto-start (handled by WezTerm)

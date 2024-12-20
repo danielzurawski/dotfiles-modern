@@ -1,62 +1,81 @@
-# Dotfiles Configuration
+# Development Environment Configuration
 
-This repository contains dotfiles and configuration scripts for setting up a development environment. It's organized to manage various aspects of a development setup, from shell configuration to development tools.
+This repository contains two versions of development environment configurations:
+- [Original Configuration](dotfiles/README.md) - Traditional setup with iTerm2 and Yarn
+- [Modern Configuration](dotfiles-modern/README.md) - Optimized setup with modern tools
 
-![Repository Structure](diagrams/structure.png)
+## Configuration Comparison
 
-## Repository Structure
+### Original Configuration (dotfiles)
+![Original Structure](diagrams/original_structure.png)
 
-### Core Configurations
+Key Features:
+- iTerm2 as primary terminal
+- Yarn for JavaScript package management
+- Basic shell configuration with Prezto
+- Limited version manager support
+- Traditional CLI tools
 
-- **git/** - Git configuration files
-  - `gitconfig` - Global Git configuration
-  - `gitignore` - Global Git ignore patterns
-  
-- **zsh/** - Zsh shell configuration
-  - Core configuration files (`zshrc.zsh`, `zshenv.zsh`, etc.)
-  - Modular configurations for aliases, functions, and prompts
-  - Uses Prezto framework for enhanced functionality
-  
-- **tmux/** - Terminal multiplexer configuration
-  - Platform-specific configurations for Linux and macOS
-  - Custom key bindings and visual settings
-  
-- **iterm/** - iTerm2 terminal emulator settings
-  - Color schemes and preferences
-  
-### Development Tools
+### Modern Configuration (dotfiles-modern)
+![Modern Structure](dotfiles-modern/diagrams/structure.png)
 
-- **javascript/** - JavaScript development configuration
-  - ESLint configuration
-  - Prettier configuration
-  - Editor settings
-  
-- **yarn/** - Yarn package manager configuration
-  - Global package settings
-  - Linked packages configuration
+Key Improvements:
+- WezTerm as modern terminal emulator
+- Powerlevel10k for enhanced shell experience
+- pnpm for efficient package management
+- Comprehensive version management:
+  - pyenv for Python
+  - fnm for Node.js
+  - SDKMAN for Java
+  - rustup for Rust
+- Modern CLI replacements:
+  - ripgrep (grep)
+  - fd (find)
+  - bat (cat)
+  - eza (ls)
+- DBeaver for database management
+- Improved development isolation
 
-### Installation
+## Key Differences
 
-- `install.sh` - Main installation script
-- `Brewfile` - Homebrew package definitions
+1. Terminal Emulation:
+   - Original: iTerm2 with basic configuration
+   - Modern: WezTerm with GPU acceleration and modern features
 
-## Current Limitations
+2. Shell Experience:
+   - Original: Basic Prezto setup
+   - Modern: Optimized Prezto with Powerlevel10k integration
 
-1. Limited package manager support (primarily Homebrew/Yarn)
-2. No dedicated Python environment management
-3. No Rust toolchain configuration
-4. Global package installation approach
-5. No containerization support
-6. Limited modern JavaScript tooling (no pnpm)
+3. Package Management:
+   - Original: Yarn for JavaScript
+   - Modern: pnpm with efficient storage and better isolation
+
+4. Development Tools:
+   - Original: Basic development setup
+   - Modern: Comprehensive tooling with version management
+
+5. Command Line Tools:
+   - Original: Traditional Unix tools
+   - Modern: Performance-focused modern alternatives
 
 ## Installation
 
+Choose the configuration that best suits your needs:
+
+### Original Setup
 ```bash
-git clone https://github.com/danielzurawski/dotfiles.git
+git clone https://github.com/yourusername/dotfiles.git
 cd dotfiles
+./install.sh
+```
+
+### Modern Setup
+```bash
+git clone https://github.com/yourusername/dotfiles-modern.git
+cd dotfiles-modern
 ./install.sh
 ```
 
 ## License
 
-See [LICENSE](LICENSE) file
+Both configurations are available under the same license terms. See [LICENSE](LICENSE) file.

@@ -2,7 +2,7 @@
 
 A minimal, complete development environment focused on modern tools and efficient workflows. This configuration provides a clean, isolated setup for Python, Node.js, Java, and Rust development while maintaining simplicity and avoiding redundancy.
 
-![Repository Structure](diagrams/structure.png)
+![Repository Structure](./diagrams/structure.png)
 
 ## Core Features
 

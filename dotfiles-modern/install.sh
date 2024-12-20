@@ -93,12 +93,9 @@ fi
 if ! command -v zoxide >/dev/null 2>&1; then
     echo -e "${BLUE}Installing zoxide (smart cd)...${NC}"
     curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-fi
-
-if ! command -v starship >/dev/null 2>&1; then
-    echo -e "${BLUE}Installing Starship prompt...${NC}"
-    curl -sS https://starship.rs/install.sh | sh
-    echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+    
+    # Add zoxide to shell configuration
+    echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
 fi
 
 # Set up Docker with rootless mode
@@ -133,16 +130,14 @@ else
 fi
 
 # Development tools configuration
-mkdir -p ~/.config/{nvim,starship}
+mkdir -p ~/.config/{nvim,powerlevel10k}
 ln -sf "$(pwd)/javascript/eslintrc" ~/.eslintrc
 ln -sf "$(pwd)/javascript/prettierrc" ~/.prettierrc
+ln -sf "$(pwd)/zsh/.p10k.zsh" ~/.p10k.zsh
 
-# Create a basic Starship configuration
-cat > ~/.config/starship.toml << EOF
-format = """
-[┌───────────────────>](bold green)
-[│](bold green)$directory$git_branch$git_status
-[└─>](bold green) """
-EOF
+# Ensure powerlevel10k references are in place
+if [[ -f ~/.zshrc ]]; then
+    echo 'source ~/.p10k.zsh' >> ~/.zshrc
+fi
 
 echo -e "${GREEN}Installation complete! Please restart your shell.${NC}"

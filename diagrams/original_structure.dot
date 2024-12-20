@@ -1,0 +1,35 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    
+    dotfiles [label="dotfiles\nOriginal configuration", fillcolor=lightgreen];
+    
+    subgraph cluster_0 {
+        label="Core Configurations";
+        git [label="git/\nGit configuration"];
+        zsh [label="zsh/\nShell configuration"];
+        tmux [label="tmux/\nTerminal multiplexer"];
+        iterm [label="iterm/\niTerm2 terminal"];
+    }
+    
+    subgraph cluster_1 {
+        label="Development";
+        javascript [label="javascript/\nJS tooling"];
+        yarn [label="yarn/\nPackage management"];
+    }
+    
+    # Core connections
+    dotfiles -> git;
+    dotfiles -> zsh;
+    dotfiles -> tmux;
+    dotfiles -> iterm;
+    dotfiles -> javascript;
+    dotfiles -> yarn;
+    
+    # Configuration files
+    install [label="install.sh\nSetup script", fillcolor=lightgreen];
+    brewfile [label="Brewfile\nLegacy packages", fillcolor=lightgreen];
+    
+    dotfiles -> install;
+    dotfiles -> brewfile;
+}
