@@ -1,3 +1,0 @@
-# on smart terminals (iterm2) bind shift-space to ặ
-set -g prefix ặ
-bind ặ send-prefix

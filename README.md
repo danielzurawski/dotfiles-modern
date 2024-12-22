@@ -1,81 +1,106 @@
-# Development Environment Configuration
+# Modern macOS Development Environment
 
-This repository contains two versions of development environment configurations:
-- [Original Configuration](dotfiles/README.md) - Traditional setup with iTerm2 and Yarn
-- [Modern Configuration](dotfiles-modern/README.md) - Optimized setup with modern tools
+A streamlined and minimalist dotfiles configuration for setting up a modern macOS development environment.
 
-## Configuration Comparison
+![Development Environment Overview](docs/environment_overview.png)
 
-### Original Configuration (dotfiles)
-![Original Structure](diagrams/original_structure.png)
+## Overview
 
-Key Features:
-- iTerm2 as primary terminal
-- Yarn for JavaScript package management
-- Basic shell configuration with Prezto
-- Limited version manager support
-- Traditional CLI tools
+Automated configuration for terminal, shell, and development tools with a focus on simplicity and maintainability. Designed to provide a complete yet minimal development environment for macOS.
 
-### Modern Configuration (dotfiles-modern)
-![Modern Structure](dotfiles-modern/diagrams/structure.png)
+## Core Components
 
-Key Improvements:
-- WezTerm as modern terminal emulator
-- Powerlevel10k for enhanced shell experience
-- pnpm for efficient package management
-- Comprehensive version management:
-  - pyenv for Python
-  - fnm for Node.js
-  - SDKMAN for Java
-  - rustup for Rust
-- Modern CLI replacements:
-  - ripgrep (grep)
-  - fd (find)
-  - bat (cat)
-  - eza (ls)
-- DBeaver for database management
-- Improved development isolation
+### Terminal Environment
+- **WezTerm**: Modern GPU-accelerated terminal emulator
+- Custom theming and font rendering
+- True color and ligature support
 
-## Key Differences
+### Shell Configuration
+- **Zsh**: Modern shell with advanced features
+- **Powerlevel10k**: Fast, informative prompt
+- Smart completions and history management
 
-1. Terminal Emulation:
-   - Original: iTerm2 with basic configuration
-   - Modern: WezTerm with GPU acceleration and modern features
+### Development Tools
 
-2. Shell Experience:
-   - Original: Basic Prezto setup
-   - Modern: Optimized Prezto with Powerlevel10k integration
+#### Version Management
+- **fnm**: Fast Node Version Manager
+- **pyenv**: Python Version Manager
+- **SDKman**: Java Development Kit Manager
 
-3. Package Management:
-   - Original: Yarn for JavaScript
-   - Modern: pnpm with efficient storage and better isolation
+#### Package Management
+- **pnpm**: Node.js package manager
+- **Poetry**: Python dependency management
+- **Cargo**: Rust package manager
 
-4. Development Tools:
-   - Original: Basic development setup
-   - Modern: Comprehensive tooling with version management
+#### Applications
+- Visual Studio Code
+- DBeaver Community
+- Firecamp (API testing)
+- Podman + Podman Compose
 
-5. Command Line Tools:
-   - Original: Traditional Unix tools
-   - Modern: Performance-focused modern alternatives
+## Quick Start
 
-## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/dotfiles.git
+   cd dotfiles
+   ```
 
-Choose the configuration that best suits your needs:
+2. Run the installation script:
+   ```bash
+   ./install.sh
+   ```
 
-### Original Setup
-```bash
-git clone https://github.com/yourusername/dotfiles.git
-cd dotfiles
-./install.sh
+The script will:
+- Install required dependencies via Homebrew
+- Configure shell environment
+- Set up development tools
+- Create necessary symlinks
+- Backup existing configurations
+
+## Configuration
+
+### File Structure
+```
+.
+├── .gitignore           # Git ignore patterns
+├── .p10k.zsh           # Powerlevel10k theme
+├── .zshrc              # Shell configuration
+├── Brewfile            # Package dependencies
+├── install.sh          # Installation script
+└── wezterm.lua         # Terminal configuration
 ```
 
-### Modern Setup
+### Local Customization
+- Machine-specific settings: `~/.zshrc.local`
+- Additional tools: Add to `Brewfile`
+
+## Updating
+
 ```bash
-git clone https://github.com/yourusername/dotfiles-modern.git
-cd dotfiles-modern
-./install.sh
+# System packages
+brew update && brew upgrade
+
+# Development environments
+fnm install --lts        # Node.js
+pyenv update            # Python
+sdk update             # Java
 ```
+
+## Version History
+
+Latest: v1.5.0 - Complete documentation and system visualization
+See git tags for full history: `git tag -l`
 
 ## License
 
-Both configurations are available under the same license terms. See [LICENSE](LICENSE) file.
+MIT License
+
+## References
+
+- [Homebrew](https://brew.sh/)
+- [WezTerm](https://wezfurlong.org/wezterm/)
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [fnm](https://github.com/Schniz/fnm)
+- [pyenv](https://github.com/pyenv/pyenv)
+- [SDKman](https://sdkman.io/)
