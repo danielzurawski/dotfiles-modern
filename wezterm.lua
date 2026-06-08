@@ -15,7 +15,7 @@ config.freetype_load_target = 'Light'
 config.freetype_render_target = 'HorizontalLcd'
 
 -- Color scheme and visual settings
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Solarized Dark Higher Contrast'
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 20
 config.enable_tab_bar = true
@@ -43,12 +43,12 @@ config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 
 -- Key tables for word-wise movement
-config.key_tables = {
-  copy_mode = {
-    { key = "LeftArrow",  mods = "ALT", action = wezterm.action({ SendString = "\x1b\x62" }) },
-    { key = "RightArrow", mods = "ALT", action = wezterm.action({ SendString = "\x1b\x66" }) },
-  },
-}
+-- config.key_tables = {
+--   copy_mode = {
+--     { key = "LeftArrow",  mods = "ALT", action = wezterm.action({ SendString = "\x1b\x62" }) },
+--     { key = "RightArrow", mods = "ALT", action = wezterm.action({ SendString = "\x1b\x66" }) },
+--   },
+-- }
 
 -- macOS specific configurations
 config.native_macos_fullscreen_mode = true
@@ -69,16 +69,18 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.ToggleFullScreen,
   },
-  -- Word-wise movement
   {
-    key = "LeftArrow",
-    mods = "ALT",
-    action = wezterm.action({ SendString = "\x1b\x62" }), -- Alt+b
+    key = 'LeftArrow',
+    mods = 'OPT',
+    action = wezterm.action.SendKey {
+      key = 'b',
+      mods = 'ALT',
+    },
   },
   {
-    key = "RightArrow",
-    mods = "ALT",
-    action = wezterm.action({ SendString = "\x1b\x66" }), -- Alt+f
+    key = 'RightArrow',
+    mods = 'OPT',
+    action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
   },
 }
 

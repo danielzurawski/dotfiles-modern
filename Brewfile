@@ -1,5 +1,6 @@
 # Taps
 tap "romkatv/powerlevel10k"
+tap "weaveworks/tap"
 
 # Shell and Terminal
 brew "zsh"
@@ -46,3 +47,5 @@ brew "readline"    # Required for various tools
 brew "sqlite3"     # Required for various tools
 brew "xz"          # Required for various tools
 brew "zlib"        # Required for various tools
+brew "awscli"
+brew "weaveworks/tap/eksctl"
