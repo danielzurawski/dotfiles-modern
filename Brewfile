@@ -10,6 +10,7 @@ brew "git"
 brew "git-extras"
 brew "gh"
 brew "jq"
+brew "tmux"
 cask "ghostty"
 
 # Fonts
@@ -19,6 +20,7 @@ cask "font-meslo-lg-nerd-font"
 brew "fnm"     # Fast Node Manager
 brew "pnpm"    # Fast Node Package Manager
 cask "visual-studio-code"
+cask "claude"
 cask "dbeaver-community"
 
 # Python Tools
