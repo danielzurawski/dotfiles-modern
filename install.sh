@@ -175,7 +175,11 @@ setup_java() {
     log_info "Setting up Java environment..."
     
     local brew_bash
-    brew_bash="$(brew --prefix)/bin/bash"
+    if [ -x "/opt/homebrew/bin/bash" ]; then
+        brew_bash="/opt/homebrew/bin/bash"
+    else
+        brew_bash="/usr/local/bin/bash"
+    fi
 
     # Install SDKman if not already installed
     if [ ! -d "$HOME/.sdkman" ]; then
