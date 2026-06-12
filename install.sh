@@ -113,8 +113,6 @@ setup_shell() {
     ln -sf "${DOTFILES_DIR}/.zshrc" "${HOME}/.zshrc"
     ln -sf "${DOTFILES_DIR}/.p10k.zsh" "${HOME}/.p10k.zsh"
 
-    echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-
 }
 
 # Set up Node.js environment with fnm and pnpm
@@ -128,8 +126,7 @@ setup_nodejs() {
     fnm install --lts
     fnm default lts-latest
     
-    # Set up pnpm
-    pnpm setup
+
 }
 
 # Set up Python environment with Poetry and pyenv
