@@ -3,10 +3,12 @@ tap "romkatv/powerlevel10k"
 tap "weaveworks/tap"
 
 # Shell and Terminal
+brew "bash"
 brew "zsh"
 brew "romkatv/powerlevel10k/powerlevel10k"
 brew "git"
 brew "git-extras"
+brew "gh"
 brew "jq"
 cask "ghostty"
 

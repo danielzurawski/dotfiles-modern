@@ -174,15 +174,16 @@ setup_rust() {
 setup_java() {
     log_info "Setting up Java environment..."
     
+    local brew_bash
+    brew_bash="$(brew --prefix)/bin/bash"
+
     # Install SDKman if not already installed
     if [ ! -d "$HOME/.sdkman" ]; then
-        curl -s "https://get.sdkman.io" | bash
-        source "$HOME/.sdkman/bin/sdkman-init.sh"
+        curl -s "https://get.sdkman.io" | "$brew_bash"
     fi
-    
-    # Install latest LTS version of Java
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
-    sdk install java
+
+    # Install latest LTS version of Java (SDKman requires Bash 4+)
+    "$brew_bash" -c 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install java'
 }
 
 # Main installation function
