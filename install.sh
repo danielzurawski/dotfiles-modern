@@ -129,6 +129,13 @@ setup_nodejs() {
 
 }
 
+# Install Claude Code CLI
+setup_claude_code() {
+    log_info "Installing Claude Code CLI..."
+    eval "$(fnm env --use-on-cd)"
+    npm install -g @anthropic-ai/claude-code
+}
+
 # Set up Python environment with Poetry and pyenv
 setup_python() {
     log_info "Setting up Python environment..."
@@ -200,6 +207,7 @@ main() {
     install_dependencies
     setup_rust
     setup_nodejs
+    setup_claude_code
     setup_python
     setup_java
     setup_shell

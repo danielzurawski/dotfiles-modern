@@ -20,7 +20,7 @@ cask "font-meslo-lg-nerd-font"
 brew "fnm"     # Fast Node Manager
 brew "pnpm"    # Fast Node Package Manager
 cask "visual-studio-code"
-cask "claude"
+cask "claude"                  # Claude desktop app
 cask "dbeaver-community"
 
 # Python Tools
