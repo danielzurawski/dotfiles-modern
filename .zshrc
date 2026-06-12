@@ -19,8 +19,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export WEZTERM_CONFIG_FILE="$HOME/.dotfiles/wezterm.lua"
-
 alias python=python3
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

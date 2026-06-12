@@ -8,7 +8,7 @@ brew "romkatv/powerlevel10k/powerlevel10k"
 brew "git"
 brew "git-extras"
 brew "jq"
-cask "wezterm"
+cask "ghostty"
 
 # Fonts
 cask "font-meslo-lg-nerd-font"

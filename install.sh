@@ -95,25 +95,23 @@ setup_shell() {
 
     # Create necessary config directories
     mkdir -p "${HOME}/.config"
-    mkdir -p "${HOME}/.config/wezterm"
-    
+    mkdir -p "${HOME}/.config/ghostty"
+
     # Backup existing configurations
     local timestamp=$(date +%Y%m%d_%H%M%S)
     local backup_dir="${HOME}/.dotfiles_backup_${timestamp}"
-    
-    if [ -f "${HOME}/.zshrc" ] || [ -f "${HOME}/.p10k.zsh" ] || [ -f "${HOME}/.config/wezterm/wezterm.lua" ]; then
+
+    if [ -f "${HOME}/.zshrc" ] || [ -f "${HOME}/.p10k.zsh" ]; then
         log_info "Backing up existing configurations to ${backup_dir}"
         mkdir -p "${backup_dir}"
         [ -f "${HOME}/.zshrc" ] && mv "${HOME}/.zshrc" "${backup_dir}/"
         [ -f "${HOME}/.p10k.zsh" ] && mv "${HOME}/.p10k.zsh" "${backup_dir}/"
-        [ -f "${HOME}/.config/wezterm/wezterm.lua" ] && mv "${HOME}/.config/wezterm/wezterm.lua" "${backup_dir}/"
     fi
 
     # Symlink configuration files
     log_info "Creating symlinks for configuration files..."
     ln -sf "${DOTFILES_DIR}/.zshrc" "${HOME}/.zshrc"
     ln -sf "${DOTFILES_DIR}/.p10k.zsh" "${HOME}/.p10k.zsh"
-    ln -sf "${DOTFILES_DIR}/wezterm.lua" "${HOME}/.config/wezterm/wezterm.lua"
 
     echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
