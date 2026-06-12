@@ -198,11 +198,11 @@ main() {
     check_xcode_cli
     install_homebrew
     install_dependencies
-    setup_shell
+    setup_rust
     setup_nodejs
     setup_python
-    setup_rust
     setup_java
+    setup_shell
     
     log_success "Installation complete!"
     log_warning "Please restart your terminal for all changes to take effect."
