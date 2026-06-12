@@ -40,6 +40,7 @@ brew "podman-compose"
 
 # Applications
 cask "firecamp"    # API Testing Tool
+cask "tailscale"
 cask "slack"
 cask "spotify"
 
