@@ -112,6 +112,7 @@ setup_shell() {
     log_info "Creating symlinks for configuration files..."
     ln -sf "${DOTFILES_DIR}/.zshrc" "${HOME}/.zshrc"
     ln -sf "${DOTFILES_DIR}/.p10k.zsh" "${HOME}/.p10k.zsh"
+    ln -sf "${DOTFILES_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
 
 }
 
