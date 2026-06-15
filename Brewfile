@@ -1,6 +1,7 @@
 # Taps
 tap "romkatv/powerlevel10k"
 tap "weaveworks/tap"
+tap "hashicorp/tap"    # Official HashiCorp formulae (Terraform moved here after the BSL license change)
 
 # Shell and Terminal
 brew "bash"
@@ -54,3 +55,8 @@ brew "xz"          # Required for various tools
 brew "zlib"        # Required for various tools
 brew "awscli"
 brew "weaveworks/tap/eksctl"
+
+# Infrastructure as Code
+brew "hashicorp/tap/terraform"    # Terraform (HashiCorp tap; homebrew-core no longer ships it)
+brew "terraform-ls"               # Terraform language server (editor LSP support)
+brew "tflint"                     # Terraform linter

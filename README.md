@@ -32,6 +32,11 @@ Automated configuration for terminal, shell, and development tools with a focus 
 - **Poetry**: Python dependency management
 - **Cargo**: Rust package manager
 
+#### Infrastructure as Code
+- **Terraform**: via the official `hashicorp/tap` (homebrew-core no longer ships it after the BSL license change)
+- **terraform-ls**: Terraform language server for editor support
+- **tflint**: Terraform linter
+
 #### Applications
 - Visual Studio Code
 - DBeaver Community
